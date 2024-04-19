@@ -4,14 +4,14 @@ import { toast as sonner } from 'sonner'
 import { cn } from '@/utils/cn'
 
 type ToastProps = {
-  id: string | number
-  type?: 'success' | 'error'
+  id: number | string
+  type?: 'error' | 'success'
   title?: string
   message: string
-  closable?: boolean
+  isClosable?: boolean
 }
 
-export const Toast = ({ id, type, title, message, closable }: ToastProps) => {
+export const Toast = ({ id, type, title, message, isClosable }: ToastProps) => {
   const handleDismissToast = () => {
     sonner.dismiss(id)
   }
@@ -26,7 +26,7 @@ export const Toast = ({ id, type, title, message, closable }: ToastProps) => {
         type === 'success' && 'border-success text-success shadow-toast-success'
       )}
     >
-      <Icon size={18} className={cn('min-w-[18px] min-h-[18px]', title && 'self-start')} />
+      <Icon className={cn('min-w-[18px] min-h-[18px]', title && 'self-start')} size={18} />
 
       <div className="flex items-center gap-3 overflow-hidden">
         <div className="flex w-max flex-col gap-1 font-inter text-sm text-white">
@@ -34,12 +34,13 @@ export const Toast = ({ id, type, title, message, closable }: ToastProps) => {
           <p className="tracking-wide">{message}</p>
         </div>
 
-        {closable && (
+        {isClosable && (
           <button
-            type="button"
+            aria-label="Fechar notificação"
             className="flex min-h-6 min-w-6 items-center justify-center text-placeholder transition-colors hover:text-white"
-            onClick={handleDismissToast}
             tabIndex={-1}
+            type="button"
+            onClick={handleDismissToast}
           >
             <X size={18} />
           </button>

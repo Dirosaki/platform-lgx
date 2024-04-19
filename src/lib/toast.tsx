@@ -9,8 +9,8 @@ type Options = {
 }
 
 type ToastFn = {
-  error: (message: string, options?: Options) => string | number
-  success: (message: string, options?: Options) => string | number
+  error: (message: string, options?: Options) => number | string
+  success: (message: string, options?: Options) => number | string
 }
 
 export const toast: ToastFn = {
@@ -19,7 +19,7 @@ export const toast: ToastFn = {
     const { title, closable, ...toastOptions } = options
 
     return sonner.custom(
-      (id) => <Toast id={id} type={type} title={title} message={message} closable={closable} />,
+      (id) => <Toast id={id} isClosable={closable} message={message} title={title} type={type} />,
       toastOptions
     )
   },
@@ -28,7 +28,7 @@ export const toast: ToastFn = {
     const { title, closable, ...toastOptions } = options
 
     return sonner.custom(
-      (id) => <Toast id={id} type={type} title={title} message={message} closable={closable} />,
+      (id) => <Toast id={id} isClosable={closable} message={message} title={title} type={type} />,
       toastOptions
     )
   },

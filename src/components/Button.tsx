@@ -23,8 +23,20 @@ export const variants = cva(
   }
 )
 
-export const Button = ({ isLoading = false, disabled, variant, className, children, ...props }: ButtonProps) => (
-  <button type="button" disabled={isLoading || disabled} className={variants({ variant, className })} {...props}>
+export const Button = ({
+  disabled,
+  isLoading = false,
+  variant,
+  className,
+  children,
+  ...props
+}: ButtonProps) => (
+  <button
+    className={variants({ variant, className })}
+    disabled={isLoading || disabled}
+    type="button"
+    {...props}
+  >
     {isLoading ? <LoaderCircle className="animate-spin duration-700" /> : children}
   </button>
 )

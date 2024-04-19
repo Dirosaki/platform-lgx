@@ -4,12 +4,12 @@ type BrandProps = {
 
 export const Brand = ({ className }: BrandProps) => (
   <svg
-    width="195"
+    className={className}
+    fill="none"
     height="48"
     viewBox="0 0 195 48"
-    fill="none"
+    width="195"
     xmlns="http://www.w3.org/2000/svg"
-    className={className}
   >
     <path
       d="M3.52124 17.3787V30.6213H50.662V27.7658H17.6635C17.2914 27.7658 16.9899 27.5781 16.9899 27.3466V17.3787H3.52124Z"
