@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
-import { Input } from '@/components/form'
+import { Group, Helper, Input, Label } from '@/components/form'
 
 import { useLogin } from './hooks/useLogin'
 
@@ -16,10 +16,8 @@ export const Login = () => {
         Insira seu e-mail e senha para acessar a plataforma.
       </p>
 
-      <div className="flex w-full flex-col gap-[6px]">
-        <label className="inline-flex self-start text-sm text-white" htmlFor="email">
-          E-mail
-        </label>
+      <Group>
+        <Label htmlFor="email">E-mail</Label>
         <Input
           autoComplete="email"
           id="email"
@@ -27,20 +25,14 @@ export const Login = () => {
           type="text"
           {...register('email')}
         />
-        {errors.email?.message && (
-          <span className="text-sm text-placeholder">{errors.email.message}</span>
-        )}
-      </div>
+        <Helper message={errors.email?.message} />
+      </Group>
 
-      <div className="mt-4 flex w-full flex-col gap-[6px]">
-        <label className="inline-flex self-start text-sm text-white" htmlFor="password">
-          Senha
-        </label>
+      <Group>
+        <Label htmlFor="password">Senha</Label>
         <Input id="password" placeholder="Sua senha" type="password" {...register('password')} />
-        {errors.password?.message && (
-          <span className="text-balance text-sm text-placeholder">{errors.password.message}</span>
-        )}
-      </div>
+        <Helper message={errors.password?.message} />
+      </Group>
 
       <Link
         className="mt-4 text-sm text-white underline underline-offset-4 transition-colors hover:text-primary "

@@ -1,10 +1,12 @@
+import { cn } from '@/utils/cn'
+
 type BrandProps = {
   className?: string
 }
 
 export const Brand = ({ className }: BrandProps) => (
   <svg
-    className={className}
+    className={cn('min-w-[195px] min-h-12', className)}
     fill="none"
     height="48"
     viewBox="0 0 195 48"
