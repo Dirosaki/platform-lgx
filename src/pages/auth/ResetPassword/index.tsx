@@ -10,7 +10,7 @@ export const ResetPassword = () => {
   return (
     <Card as="form" onSubmit={handleSubmit}>
       <h1 className="text-2xl font-semibold text-white">Redefinir senha</h1>
-      <p className="mb-8 mt-2 text-sm text-placeholder">Insira sua nova senha</p>
+      <p className="mb-8 mt-2 text-sm text-placeholder">Insira sua nova senha.</p>
 
       <div className="flex w-full flex-col gap-[6px]">
         <label className="inline-flex self-start text-sm text-white" htmlFor="newPassword">
@@ -42,7 +42,7 @@ export const ResetPassword = () => {
         )}
       </div>
 
-      <Button className="mt-6 md:mt-8" isLoading={isSubmitting} type="submit" onClick={() => {}}>
+      <Button className="mt-6 md:mt-8" isLoading={isSubmitting} type="submit">
         Salvar nova senha
       </Button>
     </Card>

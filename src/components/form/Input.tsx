@@ -22,7 +22,7 @@ const InputBase = (
       <input
         type={showPassword ? 'text' : type}
         className={cn(
-          'peer w-full h-10 rounded-md border border-border bg-input px-3 text-sm text-white placeholder:text-placeholder outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 transition-all',
+          'peer w-full h-10 rounded-md border border-border bg-input px-3 text-sm text-white placeholder:text-placeholder outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 transition-all md:h-11',
           isPasswordType && '[&:not(:placeholder-shown)]:pr-12',
           className
         )}
@@ -32,7 +32,7 @@ const InputBase = (
 
       {!!isPasswordType && (
         <button
-          className="absolute right-0 top-0 flex size-10 items-center justify-center rounded-md text-placeholder transition-all hover:text-white peer-placeholder-shown:hidden"
+          className="absolute right-0 top-0 flex size-10 items-center justify-center rounded-md text-placeholder transition-all hover:text-white peer-placeholder-shown:hidden md:size-11"
           tabIndex={-1}
           type="button"
           onClick={() => {

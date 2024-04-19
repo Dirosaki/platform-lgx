@@ -8,7 +8,7 @@ type ButtonProps = ComponentProps<'button'> &
   }
 
 export const variants = cva(
-  'flex h-10 w-full items-center justify-center rounded-md px-6 font-medium text-white outline-none transition-all focus-visible:ring-2 focus-visible:ring-white disabled:cursor-not-allowed disabled:opacity-50',
+  'flex h-10 w-full items-center justify-center rounded-md px-6 font-medium text-white outline-none transition-all focus-visible:ring-2 focus-visible:ring-white disabled:cursor-not-allowed disabled:opacity-50 md:h-11',
   {
     variants: {
       variant: {

@@ -13,7 +13,7 @@ export const Login = () => {
     <Card as="form" onSubmit={handleSubmit}>
       <h1 className="text-2xl font-semibold text-white">Entrar</h1>
       <p className="mb-8 mt-2 text-sm text-placeholder">
-        Insira seu e-mail e senha para acessar a plataforma
+        Insira seu e-mail e senha para acessar a plataforma.
       </p>
 
       <div className="flex w-full flex-col gap-[6px]">
