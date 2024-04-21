@@ -15,6 +15,7 @@ export const ResetPassword = () => {
       <Group>
         <Label htmlFor="newPassword">Senha</Label>
         <Input
+          autoComplete="new-password"
           id="newPassword"
           placeholder="Sua nova senha"
           type="password"
@@ -26,6 +27,7 @@ export const ResetPassword = () => {
       <Group>
         <Label htmlFor="passwordConfirm">Confirmar senha</Label>
         <Input
+          autoComplete="new-password"
           id="passwordConfirm"
           placeholder="Confirmação da sua nova senha"
           type="password"

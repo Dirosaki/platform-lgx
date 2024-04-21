@@ -21,6 +21,7 @@ export const ForgotPassword = () => {
         <Input
           autoComplete="email"
           id="email"
+          inputMode="email"
           placeholder="Seu e-mail"
           type="text"
           {...register('email')}

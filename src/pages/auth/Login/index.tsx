@@ -21,6 +21,7 @@ export const Login = () => {
         <Input
           autoComplete="email"
           id="email"
+          inputMode="email"
           placeholder="Seu e-mail"
           type="text"
           {...register('email')}
@@ -30,7 +31,13 @@ export const Login = () => {
 
       <Group>
         <Label htmlFor="password">Senha</Label>
-        <Input id="password" placeholder="Sua senha" type="password" {...register('password')} />
+        <Input
+          autoComplete="current-password"
+          id="password"
+          placeholder="Sua senha"
+          type="password"
+          {...register('password')}
+        />
         <Helper message={errors.password?.message} />
       </Group>
 
