@@ -1,11 +1,22 @@
-import { cva, VariantProps } from 'class-variance-authority'
+import { VariantProps, cva } from 'class-variance-authority'
 import { LoaderCircle } from 'lucide-react'
 import { ComponentProps } from 'react'
+import { Link } from 'react-router-dom'
 
-type ButtonProps = ComponentProps<'button'> &
-  VariantProps<typeof variants> & {
-    isLoading?: boolean
-  }
+type ButtonProps = ComponentProps<'button'> & {
+  isLoading?: boolean
+  as?: 'button'
+}
+
+type ExternalLinkProps = ComponentProps<'a'> & {
+  as: 'external-link'
+}
+
+type InternalLinkProps = ComponentProps<typeof Link> & {
+  as: 'internal-link'
+}
+
+type Props = VariantProps<typeof variants> & (ButtonProps | ExternalLinkProps | InternalLinkProps)
 
 export const variants = cva(
   'flex h-10 w-full items-center justify-center rounded-md px-6 font-medium text-white outline-none transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card disabled:cursor-not-allowed disabled:opacity-50 md:h-11',
@@ -23,20 +34,35 @@ export const variants = cva(
   }
 )
 
-export const Button = ({
-  disabled,
-  isLoading = false,
-  variant,
-  className,
-  children,
-  ...props
-}: ButtonProps) => (
-  <button
-    className={variants({ variant, className })}
-    disabled={isLoading || disabled}
-    type="button"
-    {...props}
-  >
-    {isLoading ? <LoaderCircle className="animate-spin duration-700" /> : children}
-  </button>
-)
+export const Button = (props: Props) => {
+  const { as } = props
+
+  if (as === 'internal-link') {
+    const { variant, className, ...rest } = props
+
+    return <Link className={variants({ variant, className })} {...rest} />
+  }
+
+  if (as === 'external-link') {
+    const { variant, className, children, ...rest } = props
+
+    return (
+      <a className={variants({ variant, className })} {...rest}>
+        {children}
+      </a>
+    )
+  }
+
+  const { variant, type, className, isLoading = false, disabled, children, ...rest } = props
+
+  return (
+    <button
+      className={variants({ variant, className })}
+      disabled={isLoading || disabled}
+      type={type === 'submit' ? 'submit' : 'button'}
+      {...rest}
+    >
+      {isLoading ? <LoaderCircle className="animate-spin duration-700" /> : children}
+    </button>
+  )
+}

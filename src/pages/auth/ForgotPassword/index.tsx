@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Group, Helper, Input, Label } from '@/components/form'
@@ -33,11 +31,9 @@ export const ForgotPassword = () => {
         Enviar
       </Button>
 
-      <Link className="mt-3 w-full" to="/auth/login">
-        <Button type="button" variant="secondary">
-          Voltar para o Login
-        </Button>
-      </Link>
+      <Button as="internal-link" className="mt-3" to="/auth/login" variant="secondary">
+        Voltar para o Login
+      </Button>
     </Card>
   )
 }
