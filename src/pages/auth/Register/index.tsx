@@ -17,18 +17,6 @@ export const Register = () => {
       </p>
 
       <Group>
-        <Label htmlFor="name">Nome completo</Label>
-        <Input
-          autoComplete="name"
-          id="name"
-          placeholder="Seu nome completo"
-          type="text"
-          {...register('name')}
-        />
-        <Helper message={errors.name?.message} />
-      </Group>
-
-      <Group>
         <Label htmlFor="email">E-mail</Label>
         <Input
           autoComplete="email"

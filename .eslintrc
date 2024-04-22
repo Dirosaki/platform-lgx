@@ -102,7 +102,7 @@
       }
     ],
 
-    "jsx-a11y/mouse-events-have-key-events" :"error",
+    "jsx-a11y/mouse-events-have-key-events": "error",
     "jsx-a11y/no-aria-hidden-on-focusable": "error",
     "jsx-a11y/label-has-associated-control": ["error", { "assert": "either" }],
     "jsx-a11y/autocomplete-valid": "error",
@@ -123,5 +123,5 @@
       }
     ]
   },
-  "ignorePatterns": ["vite.config.ts", "tailwind.config.js", "postcss.config.js"]
+  "ignorePatterns": ["vite.config.ts", "tailwind.config.ts", "postcss.config.js"]
 }

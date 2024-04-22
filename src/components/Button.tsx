@@ -8,13 +8,13 @@ type ButtonProps = ComponentProps<'button'> &
   }
 
 export const variants = cva(
-  'flex h-10 w-full items-center justify-center rounded-md px-6 font-medium text-white outline-none transition-all focus-visible:ring-2 focus-visible:ring-white disabled:cursor-not-allowed disabled:opacity-50 md:h-11',
+  'flex h-10 w-full items-center justify-center rounded-md px-6 font-medium text-white outline-none transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card disabled:cursor-not-allowed disabled:opacity-50 md:h-11',
   {
     variants: {
       variant: {
-        primary: 'bg-primary enabled:hover:bg-primary-600',
-        secondary:
-          'group relative border border-border bg-input before:absolute before:-bottom-px before:left-0 before:z-10 before:h-px before:w-full before:bg-gradient-to-r before:from-primary/0 before:from-10% before:via-primary before:to-primary/0 before:to-90% focus-visible:before:via-primary/0 enabled:hover:border-primary',
+        primary: 'bg-primary hover:enabled:bg-primary-600',
+        secondary: `group relative border border-border bg-input before:absolute before:-bottom-px before:left-0 before:z-10 before:h-px before:w-full before:bg-gradient-to-r before:from-primary/0 before:via-primary before:to-primary/0 before:opacity-0 before:transition-all focus-visible:before:opacity-0
+          [&:not(:focus-visible,:disabled)]:hover:before:opacity-100`,
       },
     },
     defaultVariants: {

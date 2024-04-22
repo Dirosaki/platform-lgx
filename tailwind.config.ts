@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss'
+import twAnimate from 'tailwindcss-animate'
+
 export default {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
@@ -30,5 +32,5 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
-}
+  plugins: [twAnimate],
+} satisfies Config

@@ -22,7 +22,7 @@ const InputBase = (
       <input
         type={showPassword ? 'text' : type}
         className={cn(
-          'peer w-full h-10 rounded-md border border-border bg-input px-3 text-sm text-white placeholder:text-placeholder outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 transition-all md:h-11',
+          'peer w-full h-10 rounded-md border border-border bg-input px-3 text-sm text-white placeholder:text-placeholder outline-none focus:ring-1 focus:border-primary focus:ring-primary disabled:opacity-50 transition-all md:h-11',
           isPasswordType && '[&:not(:placeholder-shown)]:pr-12',
           className
         )}
