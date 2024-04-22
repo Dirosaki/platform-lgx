@@ -1,3 +1,6 @@
+import { LoaderCircle } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Group, Helper, Input, Label } from '@/components/form'
@@ -27,12 +30,12 @@ export const ForgotPassword = () => {
         <Helper message={errors.email?.message} />
       </Group>
 
-      <Button className="mt-6 md:mt-8" isLoading={isSubmitting} type="submit">
-        Enviar
+      <Button className="mt-6 md:mt-8" type="submit">
+        {isSubmitting ? <LoaderCircle className="animate-spin duration-700" /> : 'Enviar'}
       </Button>
 
-      <Button as="internal-link" className="mt-3" to="/auth/login" variant="secondary">
-        Voltar para o Login
+      <Button className="mt-3" variant="secondary" asChild>
+        <Link to="/auth/login">Voltar para o Login</Link>
       </Button>
     </Card>
   )

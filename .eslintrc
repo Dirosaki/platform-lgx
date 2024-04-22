@@ -47,7 +47,8 @@
     "react/boolean-prop-naming": [
       "error",
       {
-        "validateNested": true
+        "validateNested": true,
+        "rule": "(^(is|has)[A-Z]([A-Za-z0-9]?)+)|asChild"
       }
     ],
     "react/jsx-sort-props": [

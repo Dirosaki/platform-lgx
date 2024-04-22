@@ -1,3 +1,5 @@
+import { LoaderCircle } from 'lucide-react'
+
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Group, Helper, Input, Label } from '@/components/form'
@@ -36,8 +38,12 @@ export const ResetPassword = () => {
         <Helper message={errors.passwordConfirm?.message} />
       </Group>
 
-      <Button className="mt-6 md:mt-8" isLoading={isSubmitting} type="submit">
-        Salvar nova senha
+      <Button className="mt-6 md:mt-8" type="submit">
+        {isSubmitting ? (
+          <LoaderCircle className="animate-spin duration-700" />
+        ) : (
+          'Salvar nova senha'
+        )}
       </Button>
     </Card>
   )

@@ -1,3 +1,4 @@
+import { LoaderCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/Button'
@@ -59,8 +60,8 @@ export const Register = () => {
         .
       </p>
 
-      <Button className="mt-5 md:mt-6" isLoading={isSubmitting} type="submit">
-        Cadastrar
+      <Button className="mt-5 md:mt-6" type="submit">
+        {isSubmitting ? <LoaderCircle className="animate-spin duration-700" /> : 'Cadastrar'}
       </Button>
 
       <span className="mx-auto mt-8 text-center text-white">

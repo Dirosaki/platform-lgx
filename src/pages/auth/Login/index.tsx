@@ -1,3 +1,4 @@
+import { LoaderCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/Button'
@@ -48,8 +49,8 @@ export const Login = () => {
         Esqueci minha senha
       </Link>
 
-      <Button className="mt-6 md:mt-8" isLoading={isSubmitting} type="submit">
-        Entrar
+      <Button className="mt-6 md:mt-8" type="submit">
+        {isSubmitting ? <LoaderCircle className="animate-spin duration-700" /> : 'Entrar'}
       </Button>
 
       <span className="mx-auto mt-8 text-center text-white">
